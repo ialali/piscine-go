@@ -1,5 +1,5 @@
 #! /bin/bash
 
-echo "hello ialali!"
+echo "Hello ialali!"
 
 
