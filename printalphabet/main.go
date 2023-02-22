@@ -11,6 +11,7 @@ func main() {
 	z01.PrintRune('f')
 	z01.PrintRune('g')
 	z01.PrintRune('h')
+	z01.PrintRune('i')
 	z01.PrintRune('j')
 	z01.PrintRune('k')
 	z01.PrintRune('l')
