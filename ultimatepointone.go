@@ -1,5 +1,5 @@
 package piscine
 
-func setToOne(numPtrPtrPtr ***int) {
-	***numPtrPtrPtr = 1
+func UltimatePointOne(n ***int) {
+	***n = 1
 }
