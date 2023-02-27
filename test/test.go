@@ -1,23 +1,13 @@
-package main
-
-import (
-	"fmt"
-	"piscine"
-)
+package piscine
 
 func IterativeFactorial(nb int) int {
-	if nb <= 0 && nb < 20 {
+	if nb >= 0 && nb <= 20 {
 		f := 1
-		for int := 1; int <= 20; int++ {
-			f = f * int
+		for i := 1; i <= nb; i++ {
+			f = f * i
 		}
 		return (f)
 	} else {
-		return (0)
+		return 0
 	}
-}
-
-func main() {
-	arg := 21
-	fmt.Println(piscine.IterativeFactorial(arg))
 }
