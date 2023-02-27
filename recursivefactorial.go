@@ -7,4 +7,5 @@ func RecursiveFactorial(nb int) int {
 	if nb > 1 {
 		return RecursiveFactorial(nb-1) * RecursiveFactorial(nb-1)
 	}
+	return 0
 }
