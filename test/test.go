@@ -6,6 +6,5 @@ import (
 )
 
 func main() {
-	arg := 0
-	fmt.Println(piscine.RecursiveFactorial(arg))
+	fmt.Println(piscine.RecursivePower(4, 3))
 }
