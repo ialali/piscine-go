@@ -2,14 +2,19 @@ package main
 
 import (
 	"os"
-	"sort"
 
 	"github.com/01-edu/z01"
 )
 
 func main() {
 	args := os.Args[1:]
-	sort.Strings(args)
+	for i := 0; i < len(args); i++ {
+		for j := i + 1; j < len(args); j++ {
+			if args[i] > args[j] {
+				args[i], args[j] = args[j], args[i]
+			}
+		}
+	}
 	for _, arg := range args {
 		for _, r := range arg {
 			z01.PrintRune(r)
