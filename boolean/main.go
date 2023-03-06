@@ -1,6 +1,15 @@
 package main
 
-import "github.com/01-edu/z01"
+import (
+	"os"
+
+	"github.com/01-edu/z01"
+)
+
+const (
+	EvenMsg = "I have an even number of arguments"
+	OddMsg  = "I have an odd number of arguments"
+)
 
 func printStr(s string) {
 	for _, r := range s {
@@ -18,11 +27,7 @@ func isEven(nbr int) bool {
 }
 
 func main() {
-	args := []string{"foo", "bar", "baz"}
-	lengthOfArg := len(args)
-
-	EvenMsg := "I have an even number of arguments"
-	OddMsg := "I have an odd number of arguments"
+	lengthOfArg := len(os.Args) - 1
 
 	if isEven(lengthOfArg) {
 		printStr(EvenMsg)
