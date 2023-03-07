@@ -2,25 +2,22 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 )
 
 func main() {
-	arguments := os.Args
-	if len(arguments) == 1 {
-        fmt.Println("File name missing")
-    } else if len(arguments) > 2 {
-		fmt.Println("Too many arguments")
-	} else {
-		fileName := arguments[1]
-		file, err := os.Open(fileName)
-		if err != nil {
-			fmt.Printf("The mistake is: %v\n", err.Error())
-		} else {
-			arr := make([]byte, 14)
-			file.Read(arr)
-			fmt.Println(string(arr))
-			file.Close()
-		}
+	if len(os.Args) < 2 {
+		fmt.Println("Please provide a filename as an argument")
+		return
 	}
+
+	filename := os.Args[1]
+	content, err := ioutil.ReadFile(filename)
+	if err != nil {
+		fmt.Printf("Error reading file %s: %s", filename, err)
+		return
+	}
+
+	fmt.Print(string(content))
 }
