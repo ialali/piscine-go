@@ -8,7 +8,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Please provide a filename as an argument")
+		fmt.Println("File name missing")
 		return
 	}
 
