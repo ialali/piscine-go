@@ -1,6 +1,6 @@
 package piscine
 
-func Median(arr []int) int {
+func Abort(arr []int) int {
 	n := len(arr)
 	if n == 0 {
 		return 0 // or any other default value
