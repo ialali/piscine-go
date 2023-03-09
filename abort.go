@@ -1,35 +1,22 @@
 package piscine
 
-func Abort(a, b, c, d, e int) int {
-	sum := a + b + c + d + e
-	max := a
-	min := a
-
-	// Find the maximum and minimum values among the arguments
-	if b > max {
-		max = b
+func Median(arr []int) int {
+	n := len(arr)
+	if n == 0 {
+		return 0 // or any other default value
 	}
-	if c > max {
-		max = c
+	for i := 0; i < n; i++ {
+		minIndex := i
+		for j := i + 1; j < n; j++ {
+			if arr[j] < arr[minIndex] {
+				minIndex = j
+			}
+		}
+		arr[i], arr[minIndex] = arr[minIndex], arr[i]
 	}
-	if d > max {
-		max = d
+	mid := n / 2
+	if n%2 == 0 {
+		return (arr[mid-1] + arr[mid]) / 2
 	}
-	if e > max {
-		max = e
-	}
-
-	if b < min {
-		min = b
-	}
-	if c < min {
-		min = c
-	}
-	if d < min {
-		min = d
-	}
-	if e < min {
-		min = e
-	}
-	return (sum - max - min) / 3
+	return arr[mid]
 }
