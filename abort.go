@@ -1,22 +1,37 @@
 package piscine
 
-func Abort(arr []int) int {
-	n := len(arr)
-	if n == 0 {
-		return 0 // or any other default value
+func Abort(a, b, c, d, e int) int {
+	min := a
+	if b < min {
+		min = b
 	}
-	for i := 0; i < n; i++ {
-		minIndex := i
-		for j := i + 1; j < n; j++ {
-			if arr[j] < arr[minIndex] {
-				minIndex = j
-			}
-		}
-		arr[i], arr[minIndex] = arr[minIndex], arr[i]
+	if c < min {
+		min = c
 	}
-	mid := n / 2
-	if n%2 == 0 {
-		return (arr[mid-1] + arr[mid]) / 2
+	if d < min {
+		min = d
 	}
-	return arr[mid]
+	if e < min {
+		min = e
+	}
+
+	max := a
+	if b > max {
+		max = b
+	}
+	if c > max {
+		max = c
+	}
+	if d > max {
+		max = d
+	}
+	if e > max {
+		max = e
+	}
+
+	sum := a + b + c + d + e
+
+	middleSum := sum - min - max
+
+	return middleSum / 3
 }
